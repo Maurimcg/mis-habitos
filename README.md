@@ -52,6 +52,14 @@ información con un PIN **en el propio teléfono**.
 Requisitos funcionales y no funcionales, reglas de validación, cálculo de rachas, arquitectura y pruebas en
 [`docs/ESPECIFICACIONES.md`](docs/ESPECIFICACIONES.md).
 
+## Probarla en Android sin instalar nada
+
+1. Desde el celular, entra a la sección **[Releases](../../releases/latest)** del repositorio y descarga `mis-habitos.apk`.
+2. Ábrelo. Android pedirá permitir "instalar apps desconocidas" para el navegador: acéptalo e instala.
+
+El APK se compila solo con GitHub Actions (`.github/workflows/apk.yml`): en cada push a `main` queda como
+artefacto, y al crear una etiqueta `v*` se publica en Releases.
+
 ## Cómo ejecutarla
 
 Requisitos: [Flutter](https://docs.flutter.dev/get-started/install) 3.50 o superior (Dart 3.14).
@@ -121,4 +129,4 @@ docs/                         # Especificaciones, base de datos y capturas
 | Seguridad | `crypto` (PBKDF2-HMAC-SHA256) |
 | Fechas en español | `intl` |
 | Tipografía | [Plus Jakarta Sans](https://github.com/tokotype/PlusJakartaSans) (licencia SIL OFL, incluida en `assets/fonts/OFL.txt`) |
-| CI | GitHub Actions: `flutter analyze` + `flutter test` |
+| CI | GitHub Actions: `flutter analyze` + `flutter test`, y compilación del APK de Android |
